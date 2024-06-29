@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Task Home</title>
+</head>
+<body>
+    <u><h1 style="text-align: center;color: rgb(207, 189, 26);">Simple To-Do</h1></u>
+    {%if task%}
+    <table border="2" align="center" cellspacing="10" >
+        <th>Task id</th>
+        <th>Task Title</th>
+        <th>Task Description</th>
+        <th>Completed</th>
+        <th>Due Date</th>
+        <tr>
+            {%for t in task%}
+            <td>{{t.id}}</td>
+            <td>{{t.title}}</td>
+            <td>{{t.description}}</td>
+            <td>{{t.completed}}</td>
+            <td>{{t.due_date}}</td>
+            
+            
+
+        </tr>
+        {%endfor%}
+    </table>
+
+    {%else%}
+    your task is empty
+    {%endif%}
+    <br><br><br><br>
+
+    <h3>Summary of Endpoints</h3>
+    <ul>
+        <li><b>Create Task:-</b>/api/tasks/create/</li>
+        <li><b>Retrive Task List:-</b>GET /api/tasks/</li>
+        <li><b>Retrive Single Task:-</b>GET /api/tasks/<id>/</li>
+        <li><b>Delete Task :-</b>DELETE /api/tasks/<id>/delete/</li>
+        <li><b>Retrive Tasks Due Today:-</b>GET /api/tasks/due-today/</li>
+    </ul>
+</body>
+</html>
